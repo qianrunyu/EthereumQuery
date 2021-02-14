@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EthereumQuery": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --port 7777 --nodeDebugPort 5860"
+    }
+  }
+}
