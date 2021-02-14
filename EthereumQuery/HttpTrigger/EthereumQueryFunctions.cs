@@ -29,7 +29,7 @@ namespace EthereumQuery
             log.LogInformation($"GetTransactionsByBlockNumAndAddress Request received. Block number: {blocknum} , Address: {addr}.");
             //in real world application should use proper validator class
             int blokNumInInt = -1;
-            if (!int.TryParse(blocknum, out blokNumInInt) || blokNumInInt <= 0)
+            if (!int.TryParse(blocknum, out blokNumInInt) || blokNumInInt < 0)
             {
                 log.LogError($"GetTransactionsByBlockNumAndAddress Request received with invalid block number: {blocknum}.");
                 return new BadRequestObjectResult("Invalid Block number.");
