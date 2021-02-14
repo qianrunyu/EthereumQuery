@@ -6,4 +6,8 @@ HOW TO RUN:
 
 2, Make EthereumQuery  as the start up project and port 7777 is unused.
 
-3, F5 to run it.The function app will listen incoming http request on  http://localhost:7777/api/blocknum/{blockNum}/address/{addr}
+3, Build the solution. 
+
+4, click F5 to run it.The function app will listen incoming http request on  http://localhost:7777/api/blocknum/{blockNum}/address/{addr}
+
+Note: If there is a package restore error message after clicking F5, try run "dotnet restore" in CLI.
