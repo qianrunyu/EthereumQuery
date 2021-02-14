@@ -27,6 +27,7 @@ namespace EthereumQuery.Services
             string blockNumInHex = "0x" + Convert.ToString(blockNumInInt, 16);
             string bodyData = JsonConvert.SerializeObject(new QueryTransactionsBody(blockNumInHex));
 
+            _log.LogInformation("Query bodydata generated. Now post to server.");
             using (var response = await _httpMessageHandler.PostAsync(bodyData))
             {
                 var stream = await response.Content.ReadAsStreamAsync();
@@ -44,7 +45,7 @@ namespace EthereumQuery.Services
                 JObject responseJObject = JObject.Parse(responseBody);
                 List<JToken> results = responseJObject["result"]["transactions"].Children().ToList();
 
-                _log.LogInformation("Raw transaction data filtered. Ready to generate objects.");
+                _log.LogInformation("Raw transaction data filtered. Ready to generate transaction objects.");
 
                 results.ForEach(x => TransactionsResults.Add(x.ToObject<TransactionsByBlockNumber>()));
             }

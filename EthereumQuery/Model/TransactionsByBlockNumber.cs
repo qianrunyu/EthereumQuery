@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EthereumQuery.Model
+﻿namespace EthereumQuery.Model
 {
     public class TransactionsByBlockNumber
     {
